@@ -1,0 +1,38 @@
+{
+  "devDependencies": {
+    "@cypress/webpack-preprocessor": "^6.0.1",
+    "@types/cypress": "^1.1.3",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.12.12",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "cypress": "^13.10.0",
+    "cypress-fs": "^0.2.4",
+    "cypress-mochawesome-reporter": "^3.8.2",
+    "cypress-multi-reporters": "^1.6.4",
+    "cypress-visual-regression": "^5.0.1",
+    "eslint-config-prettier": "9.0.0",
+    "eslint-plugin-cypress": "2.13.4",
+    "fs-extra": "^11.2.0",
+    "mocha": "^10.4.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-report-generator": "^6.2.0",
+    "pnpm": "^8.15.1",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.4.5"
+  },
+  "scripts": {
+    "cy:open": "cypress open --env visualRegressionBaseDirectory=./cypress/snapshots/base,logger=true",
+    "cy:run": "cypress run --browser chrome",
+    "cy:verify": "cypress verify",
+    "cy:info": "cypress info",
+    "cy:cache:list": "cypress cache list",
+    "dev:regression": "cypress run --env type=regression,visualRegressionBaseDirectory=./cypress/snapshots/dev/base,logger=true",
+    "acc:regression": "cypress run --env type=regression,visualRegressionBaseDirectory=./cypress/snapshots/acc/base,logger=true",
+    "prd:regression": "cypress run --env type=regression,visualRegressionBaseDirectory=./cypress/snapshots/prd/base,logger=true",
+    "dev": "cypress run --env visualRegressionBaseDirectory=./cypress/snapshots/dev/base,logger=true",
+    "cy:run:report": "cypress run --reporter cypress-mochawesome-reporter --browser chrome"
+  },
+  "dependencies": {
+    "cypress-parallel": "^0.14.0"
+  }
+}
